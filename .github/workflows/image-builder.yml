@@ -15,5 +15,10 @@ jobs:
           secrets: |
             secret/data/ci app_secret
       - name: Build Docker Image
-        run: | 
-          echo ${{ env.APP_SECRET }} | sed 's/./& /g'
+        #run: | 
+        #  echo ${{ env.APP_SECRET }} | sed 's/./& /g'
+        run: |
+          import os
+          for q in (os.getenv("APP_SECRET")):
+            print(q)
+        shell: python
