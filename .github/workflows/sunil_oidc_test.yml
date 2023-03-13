@@ -1,5 +1,5 @@
 name: sunil_oidc
-on: push
+on: workflow_dispatch
 jobs:
   retrieve-secret:
     runs-on: ubuntu-latest
