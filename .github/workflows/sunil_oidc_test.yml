@@ -22,7 +22,7 @@ jobs:
             VAULT_URL: http://18.217.212.16:8200
             VAULT_AUTH_PATH: jwt
             VAULT_ROLE: sunil-oidc-role
-        - name: Get Secrets from valut
+        - name: Get Secrets from valuts
           id: secretdata
           uses: hashicorp/vault-action@v2.4.0
           with:
