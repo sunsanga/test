@@ -1,5 +1,4 @@
 name: sunil_oidc
-
 on: push
 jobs:
   retrieve-secret:
@@ -16,4 +15,4 @@ jobs:
               role: sunil-oidc-role
               method: jwt
               secrets: |
-                    secret/data/ci app_secret
+                secret/data/ci app_secret
