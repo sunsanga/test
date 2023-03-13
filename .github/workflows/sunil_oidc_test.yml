@@ -30,5 +30,6 @@ jobs:
               tlsSkipVerify: true
               role: sunil-oidc-role 
               method: jwt
+              namespace: admin
               secrets: |
                 secret/data/ci app_secret
