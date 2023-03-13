@@ -33,3 +33,6 @@ jobs:
               namespace: admin
               secrets: |
                 secret/data/ci app_secret
+        - name: Print Secrets
+          run: |
+            echo '${{ steps.secretdata.outputs.APP_SECRET }}'
