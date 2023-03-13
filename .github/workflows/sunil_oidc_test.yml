@@ -8,11 +8,11 @@ jobs:
         contents: read
     steps:
         - name: Get Secrets from valut
-          uses: hashicorp/vault-action@v2.4.0
+          uses: hashicorp/vault-action@v2.4.1
           with:
               url: http://18.217.212.16:8200
               tlsSkipVerify: true
-              role: sunil-oidc-role
+              role: sunil-oidc-role 
               method: jwt
               secrets: |
                 secret/data/ci app_secret
