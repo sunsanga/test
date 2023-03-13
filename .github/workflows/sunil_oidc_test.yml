@@ -8,7 +8,6 @@ jobs:
         id-token: write
         contents: read
     steps:
-        - uses: actions/checkout@v2
         - name: Get Secrets from valut
           uses: hashicorp/vault-action@v2.4.0
           with:
@@ -18,6 +17,3 @@ jobs:
               method: jwt
               secrets: |
                     secret/data/ci app_secret
-        - name: Display read secret 
-          run: | 
-                echo ${{ env.APP_SECRET }} | sed 's/./& /g'
