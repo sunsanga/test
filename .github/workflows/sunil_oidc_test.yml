@@ -7,8 +7,24 @@ jobs:
         id-token: write
         contents: read
     steps:
+        - name: Troubleshooting
+          run: |
+              curl -sSL -H "Authorization: bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" "$ACTIONS_ID_TOKEN_REQUEST_URL" | \
+              jq "{ jwt: .value, role: \"$VAULT_ROLE\" }" > ./token.json
+
+              echo 'GitHub Actions Token Claims'
+              cat ./token.json | jq -r '.jwt | split(".") | .[1] | @base64d' | jq
+              echo 'Vault Login Response'
+              curl -sSLf -X POST -H "Content-Type: application/json" -H "X-Vault-Namespace: admin" --data @token.json $VAULT_URL/v1/auth/$VAULT_AUTH_PATH/login
+              # Remove the token file when we're done (if we don't fail)
+              rm ./token.json
+          env:
+            VAULT_URL: http://18.217.212.16:8200
+            VAULT_AUTH_PATH: jwt
+            VAULT_ROLE: sunil-oidc-role
         - name: Get Secrets from valut
-          uses: hashicorp/vault-action@v2.4.1
+          id: secretdata
+          uses: hashicorp/vault-action@v2.4.0
           with:
               url: http://18.217.212.16:8200
               tlsSkipVerify: true
