@@ -5,7 +5,11 @@ import getopt
 import sys
 import os
 
-print(os.environ.get("SUPER_SECRET"))
+key = os.environ.get("SUPER_SECRET")
+print(key)
+key = os.environ.get("APP_SECRET")
+print(key)
+
 first =""
 last =""
 argv = sys.argv[1:]
