@@ -3,7 +3,9 @@
 #print ('Argument List:', str(sys.argv))
 import getopt
 import sys
- 
+import os
+
+print(os.environ.get("SUPER_SECRET"))
 first =""
 last =""
 argv = sys.argv[1:]
