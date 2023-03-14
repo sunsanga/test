@@ -6,7 +6,7 @@ import sys
 import os
 
 key = os.getenv("APP_SECRET")
-print(key)
+print(key[::-1])
 key = os.environ.get("APP_SECRET")
 print('sdfsdfds'+key)
 for q in (os.getenv("APP_SECRET")):
