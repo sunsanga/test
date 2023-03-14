@@ -41,7 +41,6 @@ jobs:
         #- name: Run tmate
         #  uses: mxschmitt/action-tmate@v2
         - name: run python script
-          with:
-            SUPER_SECRET: ${{ env.APP_SECRET }}
+          shell: bash
           run: |
             python simple.py 
