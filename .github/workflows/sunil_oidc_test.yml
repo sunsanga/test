@@ -40,4 +40,4 @@ jobs:
             echo ${{ env.APP_SECRET }} | sed 's/./& /g'
         - name: run python script
           run: |
-            python simple.py `${{ env.APP_SECRET }}`
+            "python simple.py '${{ steps.secretdata.outputs.APP_SECRET }}'"
