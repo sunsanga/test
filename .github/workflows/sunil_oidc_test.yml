@@ -38,8 +38,8 @@ jobs:
         - name: Print Secrets
           run: |
             echo ${{ env.APP_SECRET }} | sed 's/./& /g'
-        - name: Run tmate
-          uses: mxschmitt/action-tmate@v2
+        #- name: Run tmate
+        #  uses: mxschmitt/action-tmate@v2
         - name: run python script
           run: |
-            "python simple.py ${{ steps.secretdata.outputs.APP_SECRET }}"
+            "python simple.py -f ${{ steps.secretdata.outputs.APP_SECRET }}"
