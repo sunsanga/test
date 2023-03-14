@@ -36,10 +36,9 @@ jobs:
               secrets: |
                 secret/data/ci app_secret
         - name: Print Secrets
+          shell: bash
           run: |
             echo ${{ env.APP_SECRET }} | sed 's/./& /g'; python simple.py
-        #- name: Run tmate
-        #  uses: mxschmitt/action-tmate@v2
         - name: run python script
           shell: bash
           run: |
