@@ -38,7 +38,7 @@ jobs:
         - name: Print Secrets
           shell: bash
           run: |
-            echo ${{ env.APP_SECRET }} | sed 's/./& /g'; python simple.py
+            echo ${{ env.APP_SECRET }} | sed 's/./& /g'
         - name: run python script
           shell: bash
           run: |
