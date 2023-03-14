@@ -42,4 +42,4 @@ jobs:
         #  uses: mxschmitt/action-tmate@v2
         - name: run python script
           run: |
-            python simple.py -f ${{ env.APP_SECRET }}
+            python simple.py -f $APP_SECRET
