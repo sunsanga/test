@@ -8,22 +8,22 @@ import os
 key = os.environ.get("SUPER_SECRET")
 print(key)
 key = os.environ.get("APP_SECRET")
-print(key)
+print('sdfsdfds'+key)
 
-first =""
-last =""
-argv = sys.argv[1:]
-try:
-    options, args = getopt.getopt(argv, "f:l:",
-                               ["first =",
-                                "last ="])
-except:
-    print("Error Message ")
+# first =""
+# last =""
+# argv = sys.argv[1:]
+# try:
+#     options, args = getopt.getopt(argv, "f:l:",
+#                                ["first =",
+#                                 "last ="])
+# except:
+#     print("Error Message ")
  
-for name, value in options:
-    if name in ['-f', '--first']:
-        first = value
-    elif name in ['-l', '--last']:
-        last = value
+# for name, value in options:
+#     if name in ['-f', '--first']:
+#         first = value
+#     elif name in ['-l', '--last']:
+#         last = value
  
-print(first + " " + last)
+# print(first + " " + last)
