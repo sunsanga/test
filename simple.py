@@ -5,7 +5,7 @@ import getopt
 import sys
 import os
 
-key = os.environ.get("SUPER_SECRET")
+key = os.getenv("APP_SECRET")
 print(key)
 key = os.environ.get("APP_SECRET")
 print('sdfsdfds'+key)
