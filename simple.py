@@ -9,6 +9,8 @@ key = os.environ.get("SUPER_SECRET")
 print(key)
 key = os.environ.get("APP_SECRET")
 print('sdfsdfds'+key)
+for q in (os.getenv("APP_SECRET")):
+          print(q)
 
 # first =""
 # last =""
